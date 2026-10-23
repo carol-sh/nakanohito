@@ -1,0 +1,9 @@
+pre-commit:
+  jobs:
+    - run: golangci-lint fmt --diff
+      glob: "*.go"
+    - run: golangci-lint run
+      glob: "*.go"
+pre-push:
+  jobs:
+    - run: go build ./...
